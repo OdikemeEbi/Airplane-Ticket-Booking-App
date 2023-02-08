@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:ticket_booking_app/widgets/homescreen.dart';
 import 'package:ticket_booking_app/widgets/ticket_widget.dart';
+import 'package:ticket_booking_app/widgets/ticket_widget1.dart';
 
 import 'widgets/search_widget.dart';
 
@@ -17,8 +18,8 @@ class _BottomBarState extends State<BottomBar> {
   static final List<Widget> _widgetList = <Widget>[
     const HomeScreen(),
     const SearchWidget(),
-    LoginScreen(),
-    const Text('Profile')
+    const TicketScreen(),
+    const SingUpScreen()
   ];
 
   void _onItemTapped(int index) {

@@ -1,19 +1,17 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SingUpScreen extends StatefulWidget {
+  const SingUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SingUpScreen> createState() => _SingUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SingUpScreenState extends State<SingUpScreen> {
   bool isObscure = true;
 
-  bool? _value = false;
+  bool _value = false;
 
   final _formKey = GlobalKey<FormState>();
 
@@ -91,6 +89,72 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(
                     height: 40,
+                  ),
+                  const Text(
+                    "Email, Phone or Username",
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 52,
+                    child: TextFormField(
+                      controller: emailController,
+                      decoration: InputDecoration(
+                          hintText: "Username",
+                          border: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(10))),
+                      // validator: (value) {
+                      //   if (value == null ||
+                      //       value.isEmpty ||
+                      //       !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                      //           .hasMatch(value)) {
+                      //     return 'Please enter a valid email';
+                      //   }
+                      //   return null;
+                      // },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Password",
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 52,
+                    child: TextFormField(
+                      obscureText: isObscure,
+                      controller: passwordController,
+                      decoration: InputDecoration(
+                          hintText: "Enter Password",
+                          suffixIcon: IconButton(
+                              onPressed: () {
+                                //
+                              },
+                              icon: isObscure
+                                  ? const Icon(
+                                      Icons.remove_red_eye_rounded,
+                                      color: Colors.grey,
+                                    )
+                                  : const Icon(
+                                      Icons.remove_red_eye_outlined,
+                                      color: Colors.grey,
+                                    )),
+                          border: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(10))),
+                      // validator: (value) {
+                      //   if (value == null || value.isEmpty) {
+                      //     return "Password is required";
+                      //   }
+                      //   return null;
+                      // },
+                    ),
                   ),
                   const Text(
                     "Email, Phone or Username",
